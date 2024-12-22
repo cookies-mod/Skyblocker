@@ -387,7 +387,7 @@ public class PreviewTab implements Tab {
 		}
 
 		@Override
-		protected int getContentsHeightWithPadding() {
+		protected int getContentsHeight() {
 			return height;
 		}
 
@@ -401,7 +401,7 @@ public class PreviewTab implements Tab {
 		}
 
 		@Override
-		protected void renderWidget(DrawContext context, int mouseX, int mouseY, float delta) {
+		protected void renderContents(DrawContext context, int mouseX, int mouseY, float delta) {
 			height = 0;
 			for (ClickableWidget widget : widgets) {
 				widget.setX(getX() + 1);

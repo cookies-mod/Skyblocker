@@ -1,5 +1,6 @@
 package de.hysky.skyblocker.skyblock.item;
 
+import com.mojang.logging.LogUtils;
 import de.hysky.skyblocker.annotations.Init;
 import de.hysky.skyblocker.config.SkyblockerConfigManager;
 import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper;
@@ -19,6 +20,7 @@ public class HotbarSlotLock {
                 GLFW.GLFW_KEY_H,
                 "key.categories.skyblocker"
         ));
+
     }
 
     public static boolean isLocked(int slot) {
@@ -26,7 +28,7 @@ public class HotbarSlotLock {
     }
 
     public static void handleInputEvents(ClientPlayerEntity player) {
-        while (hotbarSlotLock.wasPressed()) {
+		while (hotbarSlotLock.wasPressed()) {
             List<Integer> lockedSlots = SkyblockerConfigManager.get().general.lockedSlots;
             int selected = player.getInventory().selectedSlot;
             if (!isLocked(player.getInventory().selectedSlot)) lockedSlots.add(selected);

@@ -111,16 +111,6 @@ public class DropdownWidget<T> extends ContainerWidget {
 		 return super.mouseClicked(mouseX, mouseY, button);
 	}
 
-	@Override
-	protected int getContentsHeightWithPadding() {
-		return getHeight();
-	}
-
-	@Override
-	protected double getDeltaYPerScroll() {
-		return 0;
-	}
-
 	// container widget doesn't make it go to children anymore cuz WHY NOT
 	@Override
 	public boolean mouseScrolled(double mouseX, double mouseY, double horizontalAmount, double verticalAmount) {
@@ -152,27 +142,12 @@ public class DropdownWidget<T> extends ContainerWidget {
 			return getWidth() - 5; // 1 for scrollbar
 		}
 
-		// Custom scrollbar
-
-
-		@Override
-		protected void drawScrollbar(DrawContext context) {
-			if (this.overflows()) {
-				int i = this.getScrollbarX();
-				int j = this.getScrollbarThumbHeight();
-				int k = this.getScrollbarThumbY();
-				// Modified from DrawContext#drawVerticalLine
-				context.fill(i, k + 1, i + 2, k + j, -1);
-			}
-		}
-
 		@Override
 		protected int getScrollbarX() {
 			return getRowLeft() + getRowWidth();
 		}
 
 		// Visible
-
 		@Override
 		public boolean mouseClicked(double mouseX, double mouseY, int button) {
 			if (!visible) return false;

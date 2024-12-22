@@ -34,7 +34,7 @@
     "PlayerInventoryMixin",
     "PlayerListHudMixin",
     "PlayerSkinProviderMixin",
-    "PlayerSkinTextureDownloaderMixin",
+    "PlayerSkinTextureMixin",
     "RenderFishMixin",
     "RenderLayerMultiPhaseMixin",
     "RenderPhaseDepthTestMixin",

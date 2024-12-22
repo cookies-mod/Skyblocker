@@ -324,14 +324,4 @@ public class EditBarWidget extends ContainerWidget {
 			this.onChange = onChange;
 		}
 	}
-
-	@Override
-	protected int getContentsHeightWithPadding() {
-		return 0;
-	}
-
-	@Override
-	protected double getDeltaYPerScroll() {
-		return 0;
-	}
 }

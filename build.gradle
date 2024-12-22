@@ -11,7 +11,7 @@ group = project.maven_group
 repositories {
 	// Add repositories to retrieve artifacts from in here.
 	// You should only use this when depending on other mods because
-	// Loom adds the essential maven repositories to download Minecraft and libraries from automatically.
+	// Loom adds the essential maven repositories to download Minecraft and libraries from aut	omatically.
 	// See https://docs.gradle.org/current/userguide/declaring_repositories.html
 	// for more information about repositories.
 	flatDir {
@@ -132,6 +132,8 @@ repositories {
 			includeGroup "net.azureaaron"
 		}
 	}
+
+	maven { url = "https://pkgs.dev.azure.com/djtheredstoner/DevAuth/_packaging/public/maven/v1" }
 }
 
 dependencies {
@@ -194,6 +196,8 @@ dependencies {
 
 	// Apache Commons Text
 	include implementation("org.apache.commons:commons-text:${project.commons_text_version}")
+
+	modRuntimeOnly "me.djtheredstoner:DevAuth-fabric:1.2.1"
 }
 
 loom {
